@@ -51,7 +51,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+    <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm" style={{ overflow: 'visible' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -109,13 +109,13 @@ export function Navbar() {
 
                   {/* Dropdown */}
                   {userMenuOpen && (
-                    <div className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-200 py-1.5 z-50 animate-fade-in-down">
+                    <div className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-lg border border-gray-200 py-1.5 z-[9999] animate-fade-in-down">
                       {/* User info */}
                       <div className="px-4 py-3 border-b border-gray-100">
-                        <p className="font-semibold text-sm text-gray-900 truncate">
+                        <p className="font-semibold text-sm text-gray-900 break-all">
                           {user.user_metadata?.full_name || "Siswa"}
                         </p>
-                        <p className="text-xs text-gray-500 truncate">{user.email}</p>
+                        <p className="text-xs text-gray-500 break-all mt-0.5">{user.email}</p>
                       </div>
 
                       {/* Menu items */}
