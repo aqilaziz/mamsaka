@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: `%s | ${APP_NAME}`,
   },
   description: APP_DESCRIPTION,
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://buildaimamsaka.vercel.app"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://buildai.mam1paciran.sch.id"),
   icons: {
     icon: "/logo.png",
     shortcut: "/logo.png",
