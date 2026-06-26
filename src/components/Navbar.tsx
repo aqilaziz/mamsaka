@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { cn } from "@/lib/utils";
-import { Menu, X, Search, Plus, User, LogOut, LogIn } from "lucide-react";
+import { Menu, X, Search, Plus, LogOut, LogIn } from "lucide-react";
 import type { User } from "@supabase/supabase-js";
 
 export function Navbar() {
