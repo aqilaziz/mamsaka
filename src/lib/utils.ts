@@ -48,6 +48,28 @@ export function extractGithubRepo(url: string) {
   return match ? match[1] : null;
 }
 
+// ============================================
+// MAM 1 Paciran — School Identity
+// ============================================
 export const APP_NAME = "MAMSAKA";
+export const APP_FULL_NAME = "MAMSAKA — Madrasah Aliyah Muhammadiyah 1 Paciran";
+export const SCHOOL_NAME = "MA Muhammadiyah 1 Paciran";
+export const SCHOOL_SHORT = "MAM 1 Paciran";
 export const APP_DESCRIPTION =
-  "Platform portofolio siswa — pamerkan karya, dapatkan apresiasi, bangun karir.";
+  "Platform portofolio digital siswa MAM 1 Paciran. Madrasah unggulan mewujudkan generasi Qur'ani dan berdaya saing global melalui program tahfidz, karya digital, dan ekstrakurikuler terbaik.";
+export const SCHOOL_TAGLINE =
+  "Madrasah unggulan mewujudkan generasi Qur'ani dan berdaya saing global";
+export const SCHOOL_WEBSITE = "https://www.mam1paciran.sch.id";
+export const SCHOOL_WHATSAPP = "6285646233673";
+export const SCHOOL_PROGRAMS = [
+  { name: "Tahfidz Qur'an", icon: "📖", desc: "Program hafalan Al-Qur'an terstruktur" },
+  { name: "Karya Digital", icon: "💻", desc: "Portofolio dan project based learning" },
+  { name: "Ekstrakurikuler", icon: "🎯", desc: "Pengembangan minat dan bakat siswa" },
+  { name: "Dakwah Islam", icon: "🕌", desc: "Pembinaan akhlak dan karakter Islami" },
+];
+export const SCHOOL_STATS = [
+  { label: "Siswa Aktif", value: "500+" },
+  { label: "Guru Profesional", value: "40+" },
+  { label: "Program Unggulan", value: "8+" },
+  { label: "Tahun Berdiri", value: "1987" },
+];

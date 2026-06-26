@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { createClient } from "@/lib/supabase/client";
-import { cn } from "@/lib/utils";
+import { cn, SCHOOL_SHORT } from "@/lib/utils";
 import { Menu, X, Search, Plus, LogOut, LogIn } from "lucide-react";
 import type { User } from "@supabase/supabase-js";
 
@@ -40,24 +41,33 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 font-bold text-xl text-primary-600">
-            <span className="text-2xl">🏗️</span>
-            <span>MAMSAKA</span>
+          <Link href="/" className="flex items-center gap-2.5 font-bold text-lg text-primary-800">
+            <Image
+              src="/logo.png"
+              alt={SCHOOL_SHORT}
+              width={36}
+              height={36}
+              className="rounded-md"
+            />
+            <div className="flex flex-col leading-tight">
+              <span className="text-sm font-bold text-amber-600">MAM 1 PACIRAN</span>
+              <span className="text-[10px] text-primary-600 font-medium">MAMSAKA</span>
+            </div>
           </Link>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-6">
-            <Link href="/explore" className="text-gray-600 hover:text-primary-600 transition-colors font-medium">
-              Explore
+            <Link href="/explore" className="text-gray-600 hover:text-primary-700 transition-colors font-medium">
+              Explore Karya
             </Link>
             {!loading && user ? (
               <>
-                <Link href="/dashboard" className="text-gray-600 hover:text-primary-600 transition-colors font-medium">
+                <Link href="/dashboard" className="text-gray-600 hover:text-primary-700 transition-colors font-medium">
                   Dashboard
                 </Link>
                 <Link
                   href="/dashboard/projects/new"
-                  className="flex items-center gap-1 bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors text-sm font-medium"
+                  className="flex items-center gap-1 bg-primary-700 text-white px-4 py-2 rounded-lg hover:bg-primary-800 transition-colors text-sm font-medium"
                 >
                   <Plus size={16} />
                   Unggah Karya
@@ -65,9 +75,9 @@ export function Navbar() {
                 <div className="flex items-center gap-3">
                   <Link
                     href={`/p/${user.user_metadata?.username || user.id}`}
-                    className="flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors"
+                    className="flex items-center gap-2 text-gray-600 hover:text-primary-700 transition-colors"
                   >
-                    <div className="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 font-bold text-sm">
+                    <div className="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 font-bold text-sm">
                       {user.user_metadata?.full_name?.[0] || user.email?.[0]?.toUpperCase() || "U"}
                     </div>
                   </Link>
@@ -83,7 +93,7 @@ export function Navbar() {
             ) : (
               <Link
                 href="/login"
-                className="flex items-center gap-1 bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors text-sm font-medium"
+                className="flex items-center gap-1 bg-primary-700 text-white px-4 py-2 rounded-lg hover:bg-primary-800 transition-colors text-sm font-medium"
               >
                 <LogIn size={16} />
                 Masuk
@@ -105,14 +115,14 @@ export function Navbar() {
       {mobileOpen && (
         <div className="md:hidden border-t border-gray-100 bg-white px-4 py-4 space-y-3">
           <Link href="/explore" className="block py-2 text-gray-700 font-medium" onClick={() => setMobileOpen(false)}>
-            Explore
+            Explore Karya
           </Link>
           {user ? (
             <>
               <Link href="/dashboard" className="block py-2 text-gray-700 font-medium" onClick={() => setMobileOpen(false)}>
                 Dashboard
               </Link>
-              <Link href="/dashboard/projects/new" className="block py-2 text-primary-600 font-medium" onClick={() => setMobileOpen(false)}>
+              <Link href="/dashboard/projects/new" className="block py-2 text-primary-700 font-medium" onClick={() => setMobileOpen(false)}>
                 + Unggah Karya
               </Link>
               <Link href={`/p/${user.user_metadata?.username || user.id}`} className="block py-2 text-gray-700 font-medium" onClick={() => setMobileOpen(false)}>
@@ -123,7 +133,7 @@ export function Navbar() {
               </button>
             </>
           ) : (
-            <Link href="/login" className="block py-2 text-primary-600 font-medium" onClick={() => setMobileOpen(false)}>
+            <Link href="/login" className="block py-2 text-primary-700 font-medium" onClick={() => setMobileOpen(false)}>
               Masuk / Daftar
             </Link>
           )}
